@@ -53,5 +53,18 @@ target_compile_options(
 target_link_options(project_warnings INTERFACE
                     $<$<CONFIG:Debug>:-fsanitize=address,undefined>)
 
-add_executable(c_app src/main.c)
+add_executable(
+  c_app
+  src/main.c
+  src/algorithm.c
+  src/algorithm.h
+  src/mergesort.c
+  src/mergesort.h
+  src/quicksort.c
+  src/quicksort.h
+  src/utils.c
+  src/utils.h
+  src/heapsort.c
+  src/heapsort.h)
+
 target_link_libraries(c_app PRIVATE project_warnings)
